@@ -1,0 +1,119 @@
+# Print length of a String which is provided by an user
+
+x = input("Please enter a String: ")
+y = len(x)
+print(y)
+
+# Print maximum and minimum value in a list,
+
+a = [1,2,3,4,5]
+print("Maximum value in the list a is,",max(a))
+print("Minimum value in the list a is,",min(a))
+
+# Write a void function and I called the void function
+
+def greet():
+  print("Hello! Welcome to Python programming.")
+
+greet()
+
+# Write a function to print a person's name
+
+def print_name(name):
+  print("Your name is", name)
+
+print_name("Mathana")
+
+
+# Function that returns square of a number
+
+def square(x):
+  return x*x
+
+square(5)
+
+# Check if number is even
+
+def is_even(number):
+  if number %2 == 0:
+    return True
+  else:
+    return False
+
+# Calculate area of Rectangle
+
+def calculate_area(length,width):
+  return length*width
+
+# Greet someone using Python
+
+def greet_user(name,greeting="Hello"):
+  print(greeting, name,"!")
+
+greet_user("Mathana","Vanakkam")
+greet_user("Mathana")
+greet_user("Mathana","Ni Hao")
+
+# Convert Fahrenheit to Celsius in Python
+
+def convert_to_celsius(fahrenheit):
+  return (fahrenheit - 32)*5/9
+
+convert_to_celsius(567)
+
+# Write a factorial function
+
+def factorial(n):
+  while (n>0):
+    result=n*(n-1)
+    n=n-1
+    print(result)
+
+factorial(5)
+
+# Perform addition, subtraction, multiplication and division using functions
+
+def func_add(a,b):
+   print("Adding the two numbers gives,", a+b)
+
+def func_subtract(a,b):
+   print("Subtracting the two numbers gives,", a-b)
+
+def func_multiply(a,b):
+   print("Multiply the two numbers gives,", a*b)
+
+def func_divide(a,b):
+   print("Dividing the two numbers gives,",int(a/b))
+
+f = int(input("Provide a integer value for a: "))
+g = int(input("Provide a integer value for b: "))
+abc = input("What is the mathematical operation that you want to perform (add, subtract, multiply, divide): ")
+
+if abc == "add":
+  func_add(f,g)
+elif abc =="subtract":
+  func_subtract(f,g)
+elif abc == "multiply":
+  func_multiply(f,g)
+elif abc == "divide":
+  func_divide(f,g)
+
+# Nested functions
+
+def outer_function(x):
+  def inner_function(y):
+     return y*y
+return (x + inner_function(y))
+
+
+outer_function(1)
+inner_function(2)
+
+# List the name, age and Grade details of Students
+
+def student_details(name,age, /, *,grade="Not graded"):
+  print("Name:", name, "Age:", age, "Grade:", grade)
+
+student_details("Mathana","30",grade="M")
+student_details("Mary","25")
+student_details("Karthika","18",grade="A")

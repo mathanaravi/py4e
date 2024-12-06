@@ -1,0 +1,101 @@
+# Add 2 to x five time, initial value of x is 0
+
+x = 0
+y = 5
+while (y>=1):
+  x=x+2
+  print(x)
+  y=y-1
+
+# Print numbers from 1 to 10
+
+n = 1
+while (n<=10):
+  print(n)
+  n=n+1
+
+# Infinite loops stops when negative number is provided by user
+
+while True:
+  a = int(input("Please enter a numerical value: "))
+  if a<0:
+    break
+
+# Print Python on the screen
+
+for x in "Python":
+  print(x)
+
+# Count number of even numbers in a list
+
+count = 0
+
+for x in [1,2,3,4,5,6,7,8,9,10]:
+  if x%2 == 0:
+    count=count+1
+    print(count)
+
+### Moderate
+
+# Sum of numbers from 1 to 100
+
+result=0
+for g in range(51):
+  result=result+g
+print(result)
+
+
+# Find the maximum and minimum of 5 numbers from user input
+
+f = int(input("Please provide a number: "))
+g = int(input("Please provide a number: "))
+h = int(input("Please provide a number: "))
+i = int(input("Please provide a number: "))
+j = int(input("Please provide a number: "))
+
+list = [f,g,h,i,j]
+
+max = f
+min = f
+
+for x in list:
+  if x > f:
+    max = x
+  if x < f:
+    min = x
+print("Maximum number is:",max)
+print("Minimum number is:",min)
+
+
+# Break and continue
+
+
+sum = 0
+
+for n in range (21):
+  
+  sum = n + sum
+  print(n, sum)
+  continue
+  if n%5 == 0:
+    break
+
+# Debug the errors 
+
+count = 0
+while count < 5:
+  print("Count is", count)
+  count= count + 1
+
+### Hard
+
+# Factorial using loop
+
+factorial_value = 1
+
+number = int(input("Please input a number to find the factorial of: "))
+
+for i in range(1,number+1):
+  factorial_value = factorial_value * i
+print(factorial_value)
+

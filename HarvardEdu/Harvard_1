@@ -1,0 +1,49 @@
+# Print a string in lower case
+
+name = input("Enter a String: ")
+print(name.lower())
+
+# Replace space in a string with "..."
+
+name = input("Enter a String: ")
+print(name.replace(" ","..."))
+
+# Print smiley or sad face based on user input
+
+def convert(y):
+  if y.find(":)"):
+    a=y.replace(":)","🙂")
+  if y.find(":("):
+    b=a.replace(":(","🙁")
+    return b
+
+def main_program():
+   x = input("How are you feeling today?: ")
+   print(convert(x))
+
+main_program()
+
+
+# Print value of E=mc^2 with mass provided as user input
+
+abc = int(input("Please enter a value for mass (kg): "))
+print("Energy is Joules is", abc*300000000*300000000)
+
+# Give tips to a server in restaurant
+
+def main_prog():
+    dollars = dollars_to_float(input("How much was the meal? "))
+    percent = percent_to_float(input("What percentage would you like to tip? "))
+    tip = dollars * percent
+    print(f"Leave ${tip:.2f}")
+
+
+def dollars_to_float(d):
+    return(float(d[1:]))
+
+
+def percent_to_float(p):
+    return(float(p[:-1])/100)
+
+
+main_prog()

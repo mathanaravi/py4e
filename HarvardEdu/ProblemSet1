@@ -1,0 +1,137 @@
+# Answer the Great Question of Life with only certain formatted answers accepted
+
+x = input("What is the Answer to the Great Question of Life, the Universe, and Everything?: ")
+
+#x = input("Please provide a String: ")
+
+x = x.strip()
+
+if all(chr.isalpha() or chr == "-" or chr.isspace() for chr in x):
+  x=x.lower()
+  print(x)
+         
+
+if x == "42" or x == "forty-two" or x == "forty two":
+  print("Yes")
+else:
+  print("No")
+
+
+# Greet a person only in a specified format and output certain value depending on the condition
+
+x = input("Please provide your greeting: ")
+
+#x = input("Please provide a String: ")
+
+x = x.strip()
+         
+
+if x[:5] == "hello" or x[:5] == "Hello":
+  print("$0")
+elif x[0] == "h" or x[0] =="H" and x[:5] != "hello" and x[:5] != "Hello" :
+  print("$20")
+else:
+  print("$100")
+
+
+# Print the media type of a file based on file extensions
+
+a = input("Please provided a file name: ")
+a = a.lower()
+a = a.strip()
+b = a.split('.')
+c = b[1]
+extensions = ['gif','jpg','jpeg','png', 'pdf','txt','zip']
+
+if c == "gif":
+  print("image/gif")
+elif c == "jpg":
+  print("image/jpg")
+elif c == "jpeg":
+  print("image/jpeg")
+elif c == "png":
+  print("image/png")
+elif c == "pdf":
+  print("image/pdf")
+elif c == "txt":
+  print("image/txt")
+elif c == "zip":
+  print("image/zip")
+else:
+  print("application/octet-stream")
+
+# Perform mathematical operators on 2 numbers
+
+x = int(input("Please provide a numerical value for h: " ))
+z = int(input("Please provide a numerical value for k: " ))
+y = input("What do you want to do with h and k? (please type one of these values: (+ , - , * , /): ")
+
+if y == "+":
+ print(f"The sum of h and k is {(x+z):0.1f}")
+elif y == "-":
+ print(f"The difference of the two numbers is {(x-z):0.1f}")
+elif y == "*":
+ print(f"The product of the two numbers is {(x*z):0.1f}")
+elif y == "/" and z!=0:
+ print(f"The division of the two numbers gives {(x/z):0.1f}")
+
+
+# Using 24 hour clock, check if its Breakfast/Lunch/Dinner time
+
+def main():
+  time = input("Please enter time: ")
+  g = convert(time)
+  if float(7)<=g<=float(8):
+    print("Breakfast time")
+  elif float(12)<=g<=float(13):
+    print("Lunch time")
+  elif float(18)<=g<=float(19):
+    print("Dinner time")
+  
+
+def convert(time):
+  xyz = time.split(":")
+  f = float(xyz[0]) + float(float(xyz[1])/60)
+  #print(f)
+  return f
+  
+if __name__ == "__main__":
+  main()
+
+### Accommodate both 24 hours clock and 12 hour clock timing provided by user, to let them know if its Breakfast/Lunch/Dinner time (modify the above script)
+
+def main():
+  time = input("Please enter time: ")
+  g = convert(time)
+  if float(7)<=g<=float(8):
+    print("Breakfast time")
+  elif float(12)<=g<=float(13):
+    print("Lunch time")
+  elif float(18)<=g<=float(19):
+    print("Dinner time")
+
+
+def convert(time):
+  if "a.m." in time:
+    xyz = time.replace("a.m.","")
+    xyz = xyz.split(":")
+    xyz[0]=float(xyz[0])
+    f = float(xyz[0]) + float(float(xyz[1])/60)
+    return f
+    
+  elif "p.m." in time:
+    xyz = time.replace("p.m.","")
+    xyz = xyz.split(":")
+    xyz[0]=(float(xyz[0]) + float(12))
+    print(xyz[0])
+    f = float(xyz[0]) + float(float(xyz[1])/60)
+    return f
+
+  else:
+    xyz = time.split(":")
+    f = float(xyz[0]) + float(float(xyz[1])/60)
+    print(f)
+    return f
+  
+if __name__ == "__main__":
+      main()

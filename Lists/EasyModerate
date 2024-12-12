@@ -1,0 +1,102 @@
+### Easy
+
+### Sum of elements in a list using a for loop
+
+x = [1,2,3,4,5]
+
+sum = 0
+
+for c in x:
+  sum = sum + c
+print("The sum of the list of numbers is", sum)
+
+
+### List splicing with [1,2,3,4,5]
+
+x = [1,2,3,4,5]
+
+print("The first three elements of the list are: ", x[:3])
+
+print("The last two elements of the list are: ", x[-2:])
+
+print("The list in reverse order is: ", x[::-1])
+
+
+### Add and remove elements from the list
+
+x = [1,2,3,4,5]
+
+# Add the element 6 to the list
+
+x.append(6)
+
+# Remove the element 3 from the list
+
+print(x)
+
+x.remove(3)
+
+print(x)
+
+
+
+### Print names and list of the names defined in a list
+
+x = ['Mary','Sam','Bob','Kenny','Jane']
+
+for name in x:
+  print("The length of the name,", name, "is", len(name))
+
+
+### Moderate
+
+### Print the list of words in a String
+
+hjk = input("Please provide a sentence: ")
+
+abc = hjk.split()
+
+print(abc)
+
+### Remove the third element in a list and print the list once its removed
+
+ert = [1,2,3,4,5]
+
+ert.pop(2)
+
+print(ert)
+
+### Define a function to return the maximum value in a list provided as argument
+
+def find_max(lst):
+  return max(lst)
+
+#find_max([1,2,3,4,5])
+
+
+### Print integers on differents lines as a list from each line
+
+def my_function(uvw):
+  abcde = uvw.replace(","," ")
+  abcde=abcde.split("\n")
+  for line in abcde:
+    line = line.split(" ")
+    print(line)
+
+
+my_function(uvw = """1,2,3,4,5,
+6,7,8,9,10,
+11,12,13,14,15""")
+
+### Double the values of elements in a list
+
+def double_elements(lst):
+  i = 0
+  while i<len(lst):
+    for x in lst:
+      lst[i]=x*2
+      i=i+1
+    print(lst)
+
+
+double_elements(lst = [1,2,3,4,5])

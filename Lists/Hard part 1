@@ -1,0 +1,41 @@
+(Combining Lists and Strings)
+### Write a program to read a sentence from the user, split it into words, and join the words back into a sentence with each word capitalized
+
+x = input("Please enter a Sentence: ")
+y = x.split()
+z= []
+
+for abc in y:
+  xyz = abc.capitalize()
+  #print(xyz)
+  z.append(xyz)
+#print(z)
+print(" ".join(z))
+
+
+(Object and Values)
+### Create a list of lists. Modify one sublist and demonstrate that only that sublist is affected, not the others
+
+a = [1,2,3]
+b = [4,5,6]
+c = [7,8,9]
+j = [a,b,c]
+print("Before modifying list a: ",j)
+del a[1]
+print("List a after modification: ", a)
+print ("After modifying list a: ",j)
+
+
+(List Comprehensions)
+### Write a program to create a list of squares of even numbers from 1 to 20 using list comprehension
+
+mny = []
+abc = []
+i=0
+for x in range(2,22,2):
+  mny.append(x)
+print(mny)
+for y in mny:
+    z = y*2
+    abc.append(z)
+print(abc)

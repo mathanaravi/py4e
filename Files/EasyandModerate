@@ -1,0 +1,129 @@
+##### Easy
+
+### Opening and Reading a File:
+
+Write a program to open a file named example.txt and print its content line by line
+
+fhand = open("example.txt")
+
+for line in fhand:
+  line = line.rstrip()
+  print(line)
+  
+  
+### Using Try/Except:
+
+Write a program that attempts to open a file specified by the user. If the file does not
+exist, display an error message using try and except.
+  
+  
+  file_name = input("Please provide a file name: ")
+
+try:
+  fhand = open(file_name)
+except:
+  print("You have provided an invalid file name")
+  exit()
+
+
+### Writing to a File
+
+Write a program to create a file named output.txt and write the following text into it:
+
+Hello, World!
+
+Welcome to file handling in Python.
+
+
+fout = open('example.txt','w')
+
+Wrote the above text in example.txt
+
+
+### Counting Lines:
+
+Write a program to count the number of lines in a file named data.txt
+
+
+fhand = open('example.txt')
+
+count = 0
+
+for line in fhand:
+  count = count + 1
+print("There are", count, "lines in example.txt")
+
+
+##### Moderate
+
+### Searching Through a File:
+
+Write a program to search for a specific keyword (entered by the user) in a file and
+print all the lines that contain the keyword.
+
+abc = input("Please provide a keyword to search in example.txt: ")
+
+fhand = open('example.txt')
+
+for line in fhand:
+  if line.find(abc) == -1:
+    continue
+  print(line)
+
+
+### Appending to a File:
+
+Write a program to append the following text to an existing file named log.txt:
+Log Entry: File updated successfully.
+
+
+fhand = open('log.txt', 'a')
+
+L = "Log Entry: File updated successfully."
+
+fhand.write(L)
+
+
+### Reading and Writing Combined:
+
+Write a program to read a file input.txt, convert all the lines to uppercase, and save
+the result in output.txt.
+
+
+fhand = open('input.txt')
+i = 0
+abc = []
+for line in fhand:
+  line=line.upper()
+  abc.append(line.rstrip())
+  
+  i += 1
+#print(abc)
+fgh = " ".join(abc)
+
+fhand_new = open('output.txt','w')
+fhand_new.write(fgh)
+
+
+### Using Try/Except with File Operations:
+
+Write a program to safely read a file. If the file doesn't exist or can't be opened, print
+an appropriate error message. If the file is read successfully, count the number of
+words in it.
+
+
+try:
+  fhand = open('output.txt')
+
+except:
+  print("The file cannot not be opened or does not exist")
+
+jkl = []
+
+for line in fhand:
+  #print(line)
+  line = line.split(" ")
+  #print("Debug", line)
+  jkl.append(len(line))
+  #print("Debug", jkl)
+print("The total number of words in the file is", sum(jkl))

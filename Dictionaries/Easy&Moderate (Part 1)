@@ -1,0 +1,74 @@
+Easy
+
+
+### Basic Dictionary Operations:
+
+Create a dictionary with the keys name, age, and city, and assign values to them.
+Print each key-value pair using a loop.
+
+abc = { 'Name' : 'Mathana', 'Age': 30, 'City': 'Singapore'}
+
+for x in abc:
+  print(x, ":", abc[x])
+
+
+### Counting Characters:
+
+Write a program to count the frequency of each character in a given string and store it in a dictionary.
+
+Name = input("Please input a String: ")
+asd = dict()
+
+for x in Name:
+  asd[x] = asd.get(x, 0) + 1
+#print(asd)
+
+
+### Dictionaries and Files:
+
+Write a program to read a text file and count the number of occurrences of each word.
+Store the results in a dictionary and print it.
+
+
+fhand = open('input.txt')
+words = dict()
+
+for line in fhand:
+  line = line.rstrip()
+  tyu = line.split()
+  for word in tyu:
+    words[word] = words.get(word,0) + 1
+print(words)
+
+
+### Using get() in a Dictionary:
+
+Write a program to count the frequency of numbers in a list using a dictionary. Use the get() method to handle missing keys.
+
+
+numbers = [1,2,2,7,3,3,4,5,5,5,5,5]
+
+dic_count = dict()
+
+for number in numbers:
+  dic_count[number] = dic_count.get(number,0) + 1
+print(dic_count)
+
+
+Moderate
+
+### Word Frequency Counter:
+
+Write a program to read a file and count the frequency of each word (caseinsensitive). Print the 5 most common words and their counts.
+
+- Need to do
+
+
+### Looping Through Dictionaries:
+
+Write a program to create a dictionary with student names as keys and their marks as values. Print each student’s name and their marks.
+
+Scores = {'Mary' : 100, 'Sam' : 90, 'Jack' : 95, 'Bob':75, 'Tim': 70}
+
+for x in Scores:
+  print("Student:", x,',', "Score:", Scores[x])

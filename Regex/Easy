@@ -1,0 +1,41 @@
+Easy
+
+1. Basic Pattern Matching:
+
+Write a program to check if a string contains the word "Python" using a regular
+expression.
+
+import re
+
+fhand = open('LearnthePython.txt')
+for line in fhand:
+  line = line.rstrip()
+  if re.search('.*Python.*', line) :
+    print("This line contains Python: ", line)
+	
+2. Character Matching:
+
+Write a program to find all vowels in a string using a regular expression.
+
+import re
+fhand = open('FindtheVowels.txt')
+for line in fhand:
+  line = line.rstrip()
+  if re.search('[aeiouAEIOU]', line) :
+    print("This line contains vowels: ", line)
+	
+3. Escape Characters:
+
+Write a program to search for the literal string \n in a given text using a regular expression.
+
+
+4. Extracting Numbers:
+
+Write a program to extract all the numbers from the string "The price is 45 dollars, and the discount is 10%".
+
+import re
+
+abc = "The price is 45 dollars, and the discount is 10%"
+
+y = re.findall('[0-9.]+', abc)
+print("The numbers in the string are", y[0],"and", y[1])

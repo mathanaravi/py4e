@@ -1,0 +1,45 @@
+### Moderate
+
+1. Finding Words Starting with a Specific Letter:
+
+Write a program to find all words in a string that start with the letter a (caseinsensitive).
+
+import re
+
+abc = "All rabbits are cute and they like to eat a lot of carrots anytime"
+
+y = re.findall('(^[aA]\S*)',abc) 
+
+z = re.findall('[\s]([aA]\S*)',abc)
+
+print("The words starting with a in the string are", ", ".join(y), ", ".join(z))
+
+
+2. Extracting Emails:
+
+Write a program to extract all email addresses from a given text using a regular
+expression.
+
+import re
+
+fhand = open('mbox-short.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  y = re.findall('[a-zA-Z0-9]\S+[@]\S+[a-zA-Z]',line)
+  if len(y)>0:
+    print(" ".join(y))
+	
+
+3. Date Extraction:
+
+Write a program to extract all dates in the format dd/mm/yyyy from a string.
+Example: Input: "Today is 15/12/2024, and tomorrow is 16/12/2024." Output:
+['15/12/2024', '16/12/2024']
+
+import re
+
+sdf = "Today is 15/12/2024, and tomorrow is 16/12/2024."
+
+jkl = re.findall( '[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]' , sdf)
+print(jkl)

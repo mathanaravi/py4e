@@ -1,0 +1,29 @@
+### Moderate
+
+#Combining Searching and Extracting:
+
+#4. Write a program to extract phone numbers in the format (123) 456-7890 from a given string.
+
+import re
+
+fhand = open('numbers.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  y = re.findall('\(\d\d\d\)\s\d\d\d-\d\d\d\d',line)
+  if len(y) > 0:
+    print(y)
+
+# Extracting URLs:
+
+#5. Write a program to extract all URLs from a block of text.
+
+import re
+
+fhand = open('emailaddress.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  y = re.findall('\S+@\S+',line)
+  if len(y) > 0:
+    print(y)

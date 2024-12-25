@@ -1,0 +1,91 @@
+# Hard
+
+# 1. Complex Pattern Matching:
+
+Write a program to validate strings against the pattern AB123XY, where:
+  ▪ AB is any two uppercase letters.
+  ▪ 123 is a three-digit number.
+  ▪ XY is any two lowercase letters.
+
+import re
+
+fhand = open('stringnames.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  y = re.findall('[A-Z][A-Z]\d\d\d[a-z][a-z]',line)
+  if len(y) > 0:
+    print(y)
+
+# 2. Password Validation: (need to edit)
+
+Write a program to validate passwords using the following rules:
+▪ At least 8 characters long.
+▪ Contains at least one uppercase letter, one lowercase letter, and one digit.
+▪ Includes at least one special character (@, #, $, etc.).
+
+import re
+import string
+
+fhand = open('stringnames.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  if len(line) >= 8 and re.search('\d+', line):
+      print("The password is invalid as it only contains numbers:", line)
+  elif len(line) >= 8 and re.search('[a-z]+', line):
+      print("The password is invalid as it only contains lowercase letters:", line)
+  elif len(line) >= 8 and line in string.punctuation:
+      print("The password is invalid as it only special characters:", line)
+  elif len(line) >= 8 and re.search('[\S][\S][\S][\S][\S][\S][\S][\S]', line):
+      print("The password is valid:", line)
+  elif len(line) < 8:  
+    print("Password is too short:", line)
+	
+
+
+3. Log File Parsing:
+
+Write a program to parse a log file and extract all IP addresses using a regular expression.
+
+import re
+
+fhand = open('IPaddresses.txt')
+
+for line in fhand:
+  line=line.rstrip()
+  y = re.findall('\d\d\d\.\d\d\d\.\d\d\d\.\d\d\d' ,line)
+  if len(y) > 0:
+    print(y)
+	
+
+4. Extracting Subdomains:
+
+Write a program to extract subdomains from a list of URLs. Example: Input:
+['https://sub.example.com', 'http://blog.website.org'] Output: ['sub', 'blog']
+
+import re
+hand = open('mbox-short.txt')
+
+abc = list()
+
+for line in hand:
+    line = line.rstrip()
+    y = re.findall('https://(\S+)\.\S+\.[a-z][a-z][a-z]',line)
+    if len(y) > 0:
+      #print(y)
+      abc.extend(y)
+print(abc)
+
+
+5. Debugging Regular Expression Code:
+
+Debug and fix the following code:
+import re
+text = "The numbers are 12.34, 56.78, and 90."
+result = re.find("d+.d+", text) # Should extract ['12.34', '56.78']
+print(result)
+
+My answer,
+
+result = re.findall("\d+\.\d+", text)

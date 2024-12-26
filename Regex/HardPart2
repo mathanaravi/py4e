@@ -1,0 +1,35 @@
+### Hard Part 2
+
+6. Advanced Email Validation:
+
+Write a program to validate email addresses using the following rules:
+  ▪ Starts with an alphanumeric character.
+  ▪ Contains exactly one @ symbol.
+  ▪ Ends with a valid domain (e.g., .com, .org).
+
+
+import re
+hand = open('emails.txt')
+abc = list()
+for line in hand:
+    line = line.rstrip()
+    y = re.findall('^[A-Za-z0-9]{1,63}@[a-z]+\.[a-z]{3}', line)
+    if len(y) > 0:
+      abc.extend(y)
+print(abc)
+
+
+#7. Extracting and Sorting Data:
+
+Write a program to extract all prices in the format $123.45 from a string and sort them in ascending order.
+
+import re
+hand = open('money.txt')
+abc = list()
+for line in hand:
+    line = line.rstrip()
+    y = re.findall('^\$\d+\.\d{1,2}$', line)
+    if len(y) > 0:
+      abc.extend(y)
+    x = sorted(abc)
+print(x)

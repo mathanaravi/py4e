@@ -1,0 +1,28 @@
+import re
+
+camel_case = input("Please input a camel case string: ")
+
+same_camel_case = camel_case
+
+mno = list()
+
+if camel_case.islower():
+  print("camelCase:", camel_case)
+  print("snake_case:", camel_case)
+elif re.search('[A-Z]*',camel_case):
+  first_word = re.findall('^[a-z]+', camel_case)
+  mno.extend(first_word)
+  # convert the first word in camel_case string from a list to string
+  first_word_string = ''.join(first_word)
+  #print("Debug (1)", first_word_string)
+  # remove the first word from camel case string
+  modify_camelcase_string = camel_case.replace(first_word_string,"",1)
+  #print("Debug (2)",modify_camelcase_string)
+  newly_camelcase_string = re.findall('[A-Z][a-z]+', modify_camelcase_string)
+  #print(newly_camelcase_string)
+  mno.extend(newly_camelcase_string)
+  #print("Debug (3)", mno)
+  # Convert from camel case to snake case
+  second_last_snake_case = '_'.join(mno)
+  print("camelCase:", same_camel_case)
+  print("snake_case:", second_last_snake_case.lower())

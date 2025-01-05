@@ -1,0 +1,11 @@
+abc = input("Please provide a string: ")
+ijk = list(abc)
+#print(ijk)
+xyz = abc
+
+print("Input: ", xyz)
+
+for i in range(len(ijk)):
+  if (ijk[i] == 'a' or ijk[i] == 'e' or ijk[i] ==  'i'or ijk[i] == 'o' or ijk[i] == 'u' or ijk[i] == 'A' or ijk[i] == 'E' or ijk[i] == 'I' or ijk[i] == 'O' or ijk[i] == 'U'):
+    ijk[i]= ''
+print("Output: ","".join(ijk))
